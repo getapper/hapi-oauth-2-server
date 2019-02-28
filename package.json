@@ -1,0 +1,35 @@
+{
+  "name": "hapi-oauth-2-server",
+  "version": "0.1.0",
+  "description": "Hapijs wrapper for node oauth2-server package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getapper/hapi-oauth-2-server.git"
+  },
+  "keywords": [
+    "hapi",
+    "hapijs",
+    "oauth2",
+    "node",
+    "server"
+  ],
+  "author": "Getapper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/getapper/hapi-oauth-2-server/issues"
+  },
+  "homepage": "https://github.com/getapper/hapi-oauth-2-server#readme",
+  "devDependencies": {
+    "hapi": "17.8.4"
+  },
+  "peerDependencies": {
+    "hapi": "^17.0.0"
+  },
+  "dependencies": {
+    "oauth2-server": "3.0.1"
+  }
+}
