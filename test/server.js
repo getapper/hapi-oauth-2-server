@@ -19,7 +19,7 @@ module.exports = async model => {
     path: '/authenticate',
     config: {
       handler: async (req, h) => {
-        const { oauth } = req.server.plugins['hapi-oauth-2-server']
+        const { oauth } = req.server.plugins['hapi-oauth2-server-plugin']
         try {
           return await oauth.authenticate(req)
         } catch (e) {
@@ -34,7 +34,7 @@ module.exports = async model => {
     path: '/authorize',
     config: {
       handler: async (req, h) => {
-        const { oauth } = req.server.plugins['hapi-oauth-2-server']
+        const { oauth } = req.server.plugins['hapi-oauth2-server-plugin']
         try {
           return await oauth.authorize(req)
         } catch (e) {
@@ -49,7 +49,7 @@ module.exports = async model => {
     path: '/token',
     config: {
       handler: async (req, h) => {
-        const { oauth } = req.server.plugins['hapi-oauth-2-server']
+        const { oauth } = req.server.plugins['hapi-oauth2-server-plugin']
         try {
           return await oauth.token(req)
         } catch (e) {
