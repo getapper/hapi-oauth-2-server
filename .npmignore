@@ -1,0 +1,6 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gitignore
+.travis.yml
+package-lock.json
+test
+node_modules
