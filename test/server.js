@@ -7,7 +7,7 @@ module.exports = async model => {
     host: 'localhost'
   })
 
-  await server.register({
+  server.register({
     plugin: HapiOAuth2Server,
     options: {
       model
@@ -21,9 +21,39 @@ module.exports = async model => {
       handler: async (req, h) => {
         const { oauth } = req.server.plugins['hapi-oauth-2-server']
         try {
-          await oauth.authenticate(req)
-          return 'ok'
+          return await oauth.authenticate(req)
         } catch (e) {
+          return h.response().code(401)
+        }
+      }
+    }
+  })
+
+  server.route({
+    method: 'GET',
+    path: '/authorize',
+    config: {
+      handler: async (req, h) => {
+        const { oauth } = req.server.plugins['hapi-oauth-2-server']
+        try {
+          return await oauth.authorize(req)
+        } catch (e) {
+          return h.response().code(401)
+        }
+      }
+    }
+  })
+
+  server.route({
+    method: 'POST',
+    path: '/token',
+    config: {
+      handler: async (req, h) => {
+        const { oauth } = req.server.plugins['hapi-oauth-2-server']
+        try {
+          return await oauth.token(req)
+        } catch (e) {
+          console.log(e)
           return h.response().code(401)
         }
       }
