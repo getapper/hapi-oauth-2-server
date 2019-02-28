@@ -7,7 +7,7 @@ This is the hapi wrapper for [oauth2-server](https://github.com/oauthjs/node-oau
 
 ## Installation
 
-    $ npm install hapi-oauth-2-server
+    $ npm install hapi-oauth2-server-plugin
 
 ## Quick Start
 
@@ -16,7 +16,7 @@ The wrapper is actually a plugin for Hapi >= 17.
 To use it you just need to register it like every Hapi plugin
 
 ```js
-  const HapiOAuth2Server = require('hapi-oauth-2-server');
+  const HapiOAuth2Server = require('hapi-oauth2-server-plugin');
 
 ...
 

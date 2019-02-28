@@ -1,5 +1,5 @@
 {
-  "name": "hapi-oauth-2-server",
+  "name": "hapi-oauth2-server-plugin",
   "version": "0.1.0",
   "description": "Hapijs wrapper for node oauth2-server package",
   "main": "index.js",
