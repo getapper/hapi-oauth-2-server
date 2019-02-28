@@ -1,4 +1,4 @@
-# hapi-oauth-2-server [![Build Status](https://travis-ci.org/getapper/hapi-oauth-2-server.svg?branch=master)](https://travis-ci.org/getapper/hapi-oauth-2-server)
+# hapi-oauth2-server-plugin [![Build Status](https://travis-ci.org/getapper/hapi-oauth-2-server.svg?branch=master)](https://travis-ci.org/getapper/hapi-oauth-2-server)
 
 
 Complete, compliant and well tested module for implementing an OAuth2 Server/Provider with [hapi](https://github.com/hapijs/hapi) in [node.js](http://nodejs.org/).
