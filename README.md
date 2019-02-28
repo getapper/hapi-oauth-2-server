@@ -1,3 +1,3 @@
-# hapi-oauth-2-server
+# hapi-oauth-2-server [![Build Status](https://travis-ci.org/getapper/hapi-oauth-2-server.svg?branch=master)](https://travis-ci.org/getapper/hapi-oauth-2-server)
 
 Developing...
