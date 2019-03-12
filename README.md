@@ -42,7 +42,7 @@ Here follows a quick and easy example:
     path: '/authenticate',
     config: {
       handler: async (req, h) => {
-        const { oauth } = req.server.plugins['hapi-oauth-2-server']
+        const { oauth } = req.server.plugins['hapi-oauth2-server-plugin']
         try {
           return await oauth.authenticate(req)
         } catch (e) {
@@ -57,7 +57,7 @@ Here follows a quick and easy example:
     path: '/authorize',
     config: {
       handler: async (req, h) => {
-        const { oauth } = req.server.plugins['hapi-oauth-2-server']
+        const { oauth } = req.server.plugins['hapi-oauth2-server-plugin']
         try {
           return await oauth.authorize(req)
         } catch (e) {
@@ -72,7 +72,7 @@ Here follows a quick and easy example:
     path: '/token',
     config: {
       handler: async (req, h) => {
-        const { oauth } = req.server.plugins['hapi-oauth-2-server']
+        const { oauth } = req.server.plugins['hapi-oauth2-server-plugin']
         try {
           return await oauth.token(req)
         } catch (e) {
