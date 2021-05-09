@@ -46,6 +46,7 @@ exports.plugin = {
       }
     }
 
-    server.expose('oauth', oauth)
+    server.decorate('server', 'oauth', oauth);
+    server.decorate('request', 'oauth', oauth);
   }
 }
