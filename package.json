@@ -24,16 +24,16 @@
   },
   "homepage": "https://github.com/getapper/hapi-oauth-2-server#readme",
   "devDependencies": {
-    "code": "5.2.4",
-    "hapi": "17.8.4",
-    "lab": "18.0.2",
-    "moment": "2.24.0"
+    "@hapi/code": "8.x.x",
+    "@hapi/hapi": "20.x.x",
+    "@hapi/lab": "24.x.x",
+    "date-fns": "2.21.3"
   },
   "peerDependencies": {
-    "hapi": "^17.0.0"
+    "@hapi/hapi": "^18.x.x"
   },
   "dependencies": {
-    "joi": "14.3.1",
-    "oauth2-server": "3.0.1"
+    "joi": "17.x.x",
+    "oauth2-server": "3.1.1"
   }
 }

@@ -1,13 +1,14 @@
-const moment = require('moment')
+const add = require('date-fns/add');
+const toDate = require('date-fns/toDate');
 
 module.exports = {
   getAccessToken: async () => {
-    return { user: {}, accessTokenExpiresAt: moment().add(3, 'days').toDate() }
+    return { user: {}, accessTokenExpiresAt: toDate(add(new Date(), {days: 3}))}
   },
   getAuthorizationCode: async code => {
     return {
       code: 'be6e365e9f29c19e631078e8e376326bdf086576',
-      expiresAt: moment().add(3, 'days').toDate(),
+      expiresAt: toDate(add(new Date(), {days: 3})),
       scope: 'test',
       client: { id: 'test' },
       user: {}
