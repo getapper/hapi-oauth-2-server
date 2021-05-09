@@ -15,11 +15,18 @@ const fromHapiReq = req => {
 exports.plugin = {
   pkg: require('./package.json'),
   register: async function (server, options) {
-    await Joi.validate(options, Joi.object().keys({
-      model: Joi.object().required()
-    }))
 
-    const oauthServer = new OAuth2Server(options)
+    Joi.assert(options, Joi.object().keys({
+      model: Joi.alternatives().try(Joi.object().required(), Joi.function())
+    }));
+
+    const model = typeof options.model === 'function' ? options.model(server) : options.model;
+
+    const oauthServer = new OAuth2Server({
+      ...options,
+      model: model
+    })
+
 
     const oauth = {
       authenticate: async (req, options) => {
@@ -39,6 +46,7 @@ exports.plugin = {
       }
     }
 
-    server.expose('oauth', oauth)
+    server.decorate('server', 'oauth', oauth);
+    server.decorate('request', 'oauth', oauth);
   }
 }

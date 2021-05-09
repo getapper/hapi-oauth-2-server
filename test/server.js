@@ -1,4 +1,4 @@
-const Hapi = require('hapi')
+const Hapi = require('@hapi/hapi')
 const HapiOAuth2Server = require('../')
 
 module.exports = async model => {
@@ -19,7 +19,7 @@ module.exports = async model => {
     path: '/authenticate',
     config: {
       handler: async (req, h) => {
-        const { oauth } = req.server.plugins['hapi-oauth2-server-plugin']
+        const { oauth } = req.server
         try {
           return await oauth.authenticate(req)
         } catch (e) {
@@ -34,7 +34,7 @@ module.exports = async model => {
     path: '/authorize',
     config: {
       handler: async (req, h) => {
-        const { oauth } = req.server.plugins['hapi-oauth2-server-plugin']
+        const { oauth } = req.server
         try {
           return await oauth.authorize(req)
         } catch (e) {
@@ -49,7 +49,7 @@ module.exports = async model => {
     path: '/token',
     config: {
       handler: async (req, h) => {
-        const { oauth } = req.server.plugins['hapi-oauth2-server-plugin']
+        const { oauth } = req.server
         try {
           return await oauth.token(req)
         } catch (e) {
